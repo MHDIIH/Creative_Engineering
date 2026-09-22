@@ -1,13 +1,14 @@
-# prime-number.py - 소수 구하기 프로그램 기본 틀
-print("1부터 100 사이의 소수를 구합니다.")
+import math
+
+print("1부터 100 사이의 소수 (최적화 버전):")
 
 for num in range(2, 101):
     is_prime = True
 
-    for i in range(2, num):
+    for i in range(2, int(math.sqrt(num)) + 1):
         if num % i == 0:
             is_prime = False
             break
 
     if is_prime:
-        print(num)
+        print(num, end=" ")
